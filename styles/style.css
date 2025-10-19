@@ -1,0 +1,48 @@
+@import 'meyer-reset.css';
+
+body {
+    height: 100vh;
+    border: 2px solid red;
+}
+
+.flex {
+    display: flex;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    border: 3px solid black;
+    flex-direction: column;
+}
+
+.dashboard {
+    width: 100%;
+    height: fit-content;
+    align-self: flex-end;
+    gap: 1rem;
+    border: 2px solid green;
+    justify-content: space-evenly
+}
+
+.icon {
+    height: 50px
+}
+
+#tasks {
+    display: none;
+}
+
+#settings {
+    display: none;
+}
+
+
+.card {
+    width: 90%;
+    height: 25%;
+    align-self: flex-start;
+    border: 2px solid blue;
+    align-self: center;
+    border-radius: 1.5rem;
+}
