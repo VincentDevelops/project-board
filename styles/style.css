@@ -1,4 +1,8 @@
 @import 'meyer-reset.css';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Text:ital@0;1&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 :root {
     --primary-color: #00a7e1;
@@ -7,6 +11,19 @@
     --dark-color: #00171F;
     --light-color: #FFFFFF;
     
+    --card-min: 280px;
+    --card-max: 420px;
+    --card-radius: 10px;
+
+    --step--2: clamp(0.7813rem, 0.7736rem + 0.0341vw, 0.8rem);
+    --step--1: clamp(0.9375rem, 0.9119rem + 0.1136vw, 1rem);
+    --step-0: clamp(1.125rem, 1.0739rem + 0.2273vw, 1.25rem);
+    --step-1: clamp(1.35rem, 1.2631rem + 0.3864vw, 1.5625rem);
+    --step-2: clamp(1.62rem, 1.4837rem + 0.6057vw, 1.9531rem);
+    --step-3: clamp(1.944rem, 1.7405rem + 0.9044vw, 2.4414rem);
+    --step-4: clamp(2.3328rem, 2.0387rem + 1.3072vw, 3.0518rem);
+    --step-5: clamp(2.7994rem, 2.384rem + 1.8461vw, 3.8147rem);
+
 }
 
 body {
@@ -29,27 +46,26 @@ body {
 
 .dashboard {
     width: 100%;
-    height: fit-content;
     position: absolute;
     bottom: 0;
+    height: 10%;
 }
 
 .icon-button {
     width: 100%;
-    padding: 1rem;
+    padding: .5rem;
     background-color: var(--complementary-color);
     border-top: 1px solid var(--dark-color);
 }
 
 .dashboard > .icon-button + .icon-button {
-  border-left: 1px solid var(--dark-color);
+    border-left: 1px solid var(--dark-color);
 }
 
 .icon {
-    height: clamp(3rem, 4rem, 5rem);
     width: 100%;
+    height: 100%;
 }
-
 
 #tasks {
     display: none;
@@ -60,14 +76,15 @@ body {
 }
 
 .container-main {
-    height: 100%;
     background-color: var(--light-color);
     overflow: auto;
-    grid-template-columns: 100%;
-    gap: .75rem;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 1fr;
+    gap: clamp(12px, 3vw, 20px);
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox, Safari 18.2+, Chromium 121+ */
-    padding: .5rem 1rem;
+    padding: clamp(12px, 4vw, 24px);
+    height: 86%;
 }
 
 .container-main::-webkit-scrollbar { 
@@ -81,3 +98,67 @@ body {
 }
 
 
+/* Cards */
+
+.card {
+    border: 2px solid black;
+    border-radius: var(--card-radius);
+    position: relative;
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    background-color: var(--secondary-color);
+    max-height: 200px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.card-title {
+    font-size: var(--step-4);
+    height: fit-content;
+    padding: .25rem;
+    color: var(--light-color);
+
+}
+
+.card-details {
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-description {
+  font-size: var(--step-1);
+  padding: .25rem;
+  color: var(--light-color);
+  opacity: 0.5;
+
+  /* multi-line clamp */
+  display: -webkit-box;        
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;       /* number of lines */
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  /* optional: modern shorthand where supported */
+  line-clamp: 4;
+}
+
+.card-buttons {
+    max-height: 50px;
+    background-color: var(--primary-color);
+}
+
+.card-button {
+    width: 100%;
+    padding: .5rem;
+    border-top: 1px solid var(--dark-color);
+}
+
+.card-buttons > .card-button + .card-button {
+    border-left: 1px solid var(--dark-color);
+    
+}
+
+.card-button-icon {
+    width: 100%;
+    height: 100%;
+    max-height: 50px;
+}
