@@ -80,7 +80,7 @@ body {
     overflow: auto;
     grid-template-columns: 1fr;
     grid-auto-rows: 1fr;
-    gap: clamp(12px, 3vw, 20px);
+    gap: clamp(8px, 1vw, 20px);
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox, Safari 18.2+, Chromium 121+ */
     padding: clamp(12px, 4vw, 24px);
@@ -142,8 +142,10 @@ body {
 }
 
 .card-buttons {
-    max-height: 50px;
+    max-height: 40px;
     background-color: var(--primary-color);
+    border-bottom-left-radius: var(--card-radius);
+    border-bottom-right-radius: var(--card-radius);
 }
 
 .card-button {
