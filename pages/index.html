@@ -10,26 +10,36 @@
 
     <div class="container flex">
         <div class="dashboard flex">
+            <button class = "icon-button" id="dash">
+                <img src="/assets/icons/hamburger-menu-svgrepo-com.svg" alt="home" class="icon">
+            </button>
             <button class = "icon-button" id="home">
                 <img src="/assets/icons/home-smile-svgrepo-com.svg" alt="home" class="icon">
+                <span class="button-description" >Home</span>
             </button>
             <button class = "icon-button" id="community">
                 <img src="/assets/icons/filters-svgrepo-com.svg" alt="community" class="icon">
+                <span class="button-description" >Community</span>
             </button>
             <button class = "icon-button" id="new">
                 <img src="/assets/icons/traffic-economy-svgrepo-com.svg" alt="new" class="icon">
+                <span class="button-description" >New Post</span>
             </button>
             <button class = "icon-button" id="messages">
                 <img src="/assets/icons/letter-svgrepo-com.svg" alt="messages" class="icon">
+                <span class="button-description">Mail</span>
             </button>
             <button class = "icon-button" id="profile">
                 <img src="/assets/icons/user-circle-svgrepo-com.svg" alt="profile" class="icon">
+                <span class="button-description" >Profile</span>
             </button>
             <button class = "icon-button" id="tasks">
                 <img src="/assets/icons/checklist-svgrepo-com.svg" alt="tasks" class="icon">
+                <span class="button-description" >Tasks</span>
             </button>
             <button class = "icon-button" id="settings">
                 <img src="/assets/icons/settings-svgrepo-com.svg" alt="settings" class="icon">
+                <span class="button-description">Settings</span>
             </button>
         </div>
 
@@ -64,6 +74,23 @@
                     </button>
                 </div>
             </div> -->
+
+            <form action="" method="post" class="container-new-post flex">
+                
+                <div class="container-form-prompt flex">
+                    <label for="new-title">Title </label>
+                    <input type="text" name="new-title" id="new-title" required />
+                </div>
+
+                <div class="container-form-prompt flex">
+                    <label for="new-description">Description </label>
+                    <textarea name="new-description" id="new-description" wrap="soft" required></textarea>
+                </div>
+
+                <input type="submit" class="submit-post-button" value="Post!" />
+
+            </form>            
+            
 
         </main>
 

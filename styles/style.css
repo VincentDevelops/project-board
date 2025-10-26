@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Text:ital@0;1&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+*, *::before, *::after { box-sizing: border-box; }
 
 :root {
     --primary-color: #00a7e1;
@@ -67,6 +68,10 @@ body {
     height: 100%;
 }
 
+#dash {
+    display: none;
+}
+
 #tasks {
     display: none;
 }
@@ -85,6 +90,7 @@ body {
     scrollbar-width: none;  /* Firefox, Safari 18.2+, Chromium 121+ */
     padding: clamp(12px, 4vw, 24px);
     height: 86%;
+    
 }
 
 .container-main::-webkit-scrollbar { 
@@ -163,4 +169,110 @@ body {
     width: 100%;
     height: 100%;
     max-height: 50px;
+}
+
+/* form */
+
+.container-new-post {
+    flex-direction: column;
+    align-items: c;
+    color: var(--dark-color);
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    margin: 0;
+    display: none;
+}
+
+.container-form-prompt {
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+    gap: .25rem;
+}
+
+.post-form {
+    flex-direction: column;
+    border: 2px solid red;
+}
+
+.submit-post-button {
+    border-radius: 5px;
+    width: fit-content;
+    border: 1px solid var(--secondary-color);
+    background-color: var(--primary-color);
+}
+
+#new-title {
+    border: 2px solid var(--secondary-color);
+    font-size: var(--step-2);
+
+}
+
+#new-description {
+    height: 200px;
+    overflow: scroll;
+    border: 2px solid var(--secondary-color);
+    font-size: var(--step-1);
+    resize: none;
+}
+
+.submit-post-button {
+    margin-top: 1rem;
+    font-size: var(--step-1);
+}
+
+label {
+    font-size: var(--step-2);
+}
+
+@media (min-width: 769px) {
+    .dashboard {
+        position:absolute;
+        height: 100vh;
+        flex-direction: column;
+        width: 40%;
+        max-width: 400px;
+        border-right: 2px solid var(--secondary-color);
+        background-color: var(--complementary-color);
+        left: -400px;
+    }
+
+    #tasks {
+        display:flex
+    }
+
+    #settings {
+        display: flex;
+    }
+    
+    #dash {
+        display: flex;
+    }
+
+
+    .icon-button {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        border: none;
+        background-color: transparent;
+        align-items: center;
+        min-height: 80px;
+    }
+
+    .icon {
+        width: 75px;
+    }
+
+    .button-description {
+        color: var(--light-color);
+        font-size: var(--step-3);
+        font-family: 'Roboto', sans-serif;
+        margin-left: 1rem;
+    }
+
+    .container-main {
+        border: 2px solid black
+    }
+
+
 }
