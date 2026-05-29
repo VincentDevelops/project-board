@@ -9,7 +9,7 @@
 <body>
 
     <div class="container flex">
-        <div class="dashboard flex">
+        <div class="menu flex">
             <button class = "icon-button" id="dash">
                 <img src="/assets/icons/hamburger-menu-svgrepo-com.svg" alt="home" class="icon">
             </button>
@@ -43,9 +43,44 @@
             </button>
         </div>
 
+        <header>
+            <div class="header-container grid">
+
+                <div class="menu-button">
+                    <img src="/assets/icons/hamburger-menu-svgrepo-com.svg" class ="icon" alt="menu button">
+                </div>
+
+                <form action="search" class="search flex">
+                    <img src="/assets/icons/magnifer-svgrepo-com.svg" class="icon" alt="search">
+                    <input type="search" class="input">
+                </form>  
+
+                <div class="user-info flex">
+                    <img src="/assets/icons/bell-svgrepo-com.svg" class="icon" alt="">
+                    <img src="/assets/icons/user-circle-svgrepo-com.svg" class="icon" alt="user icon">
+                    <span class="username">User Name</span>
+                </div>
+
+                <div class="welcome flex">
+                    <img src="/assets/icons/user-circle-svgrepo-com.svg" class="icon" alt="user icon">
+                    <div class="welcome-user">
+                        <div class="welcome-message">Hi there,</div>
+                        <div class="username">User name (@username)</div>
+                    </div>
+                </div>
+
+                <div class="action-buttons flex">
+                    <button class="action-button flex" type="button">New</button>
+                    <button class="action-button flex" type="button">Upload</button>
+                    <button class="action-button flex" type="button">Share</button>
+                </div>
+
+            </div>
+        </header>
+
         <main class="container-main grid">
 
-            <!-- <div class="card flex">
+            <div class="card flex">
 
                 <div class="card-details flex">
                     <div class="card-title">Project 1</div>
@@ -73,7 +108,7 @@
                         <img src="/assets/icons/menu-dots-svgrepo-com.svg" alt="card menu" class="card-button-icon">
                     </button>
                 </div>
-            </div> -->
+            </div>
 
             <form action="" method="post" class="container-new-post flex">
                 
