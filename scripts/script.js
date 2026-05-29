@@ -17,6 +17,10 @@ const cardsContainer = document.querySelector(".cards-container");
 Array.from(hamburgerMenuButtons).forEach(element => {
     element.onclick = function() {
         toggleMenu();
+        if (mainContainer.classList.contains("hide")) {
+            formContainer.classList.add("hide");
+            mainContainer.classList.remove("hide");
+        }   
     }
 })
 
@@ -32,6 +36,9 @@ cancelPostButton.onclick = function () {
 
     mainContainer.classList.toggle("hide");
     formContainer.classList.toggle("hide");
+    newTitle.value = "";
+    newDescription.value = "";
+
 }
 
 formContainer.addEventListener("submit", function (e) {
@@ -41,6 +48,8 @@ formContainer.addEventListener("submit", function (e) {
     mainContainer.classList.toggle("hide");
     formContainer.classList.toggle("hide");
 
+    newTitle.value = "";
+    newDescription.value = "";
 
 })
 
@@ -48,6 +57,7 @@ function handleNewPost() {
     if (mainContainer.classList.contains("hide"))
         return;
 
+    removeMenu();
     mainContainer.classList.toggle("hide");
     formContainer.classList.toggle("hide");
 
